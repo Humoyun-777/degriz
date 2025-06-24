@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degriz - Premium Outdoor Furniture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://api.removal.ai/download/g3/preview/93180575-781b-435c-aa95-548b442adddd.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #FC004A;
+            --secondary-color: #2c3e50;
+            --accent-color: #f8f9fa;
+            --text-color: #333;
+            --border-color: #e5e5e5;
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+            --gradient: linear-gradient(135deg, #FC004A, #ff4757);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .location-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .location-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(252, 0, 74, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .language-select {
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-select:hover {
+            border-color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            position: relative;
+            height: 70vh;
+            background: linear-gradient(135deg, rgba(252,0,74,0.8), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            border-radius: 0 0 50px 50px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-button {
+            background: white;
+            color: var(--primary-color);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background: var(--accent-color);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: var(--gradient);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .product-price {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .order-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .order-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(252, 0, 74, 0.3);
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .video-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 290px;
+            border: none;
+        }
+
+        /* QR Code Section */
+        .qr-section {
+            padding: 60px 0;
+            background: var(--accent-color);
+        }
+
+        .qr-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .qr-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .qr-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .qr-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+            background: var(--secondary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="https://files.glotr.uz/company/000/007/849/logo/15536600711100-a9606b4306b6879d227bcca4876a077f.jpg?_=gzaucz2d5rvc0cprl865lyjkjhfo0865m7lakf3og6dsy18umhw50kuocm34bvtwoy519qwflom7ge3ip7eucx" alt="Degriz Logo">
+            </div>
+            
+            <a href="https://www.google.com/maps/@41.2844032,69.2027392,12z" target="_blank" class="location-btn">
+                <i class="fas fa-map-marker-alt"></i> Enter Your Location
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="https://www.google.com/maps/place/Degriz.uz/@41.230132,69.1781205,17z/data=!3m1!4b1!4m6!3m5!1s0x38ae63987bd2d4d7:0x7bceb5c4aef89d5b!8m2!3d41.230132!4d69.1806954!16s%2Fg%2F11w4ryvpkz?entry=ttu&g_ep=EgoyMDI1MDYxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="fas fa-map-marker-alt"></i> Our Location</a></li>
+                <li><a href="https://t.me/degrizuz" target="_blank"><i class="fab fa-telegram"></i> Telegram</a></li>
+                <li><a href="https://www.instagram.com/degriz.uz" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="https://youtube.com/@degrizkanali" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
+                <li><a href="https://www.facebook.com/share/1LBJMj2EYb/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Premium Outdoor Furniture</h1>
+            <p>Transform your outdoor space with our handcrafted furniture collection</p>
+            <button class="cta-button">Explore Collection</button>
+        </div>
+    </section>
+
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Furniture Collection</h2>
+            <div class="products-grid">
+                <!-- First row - Original images from URLs -->
+                <div class="product-card fade-in">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgViWLNhh6M247DKlofDSaZdOcdwFGWk2cCA&s" alt="Navesli Skameka" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Navesli Skameka</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS61XLNEwaizw6L44P3UwCmoPCEf3oNaZa6iw&s" alt="Custom Bench" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Ism tushurilgan Skameyka</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcYGmbMOJQJkopxCR-kj1XGWOArkOZ4FFIXQ&s" alt="Tree Bench" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Daraxt oldiga skameyka</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVQNiz9Q9dXkugzj68nE6Sfd_g_nG98yIl6w&s" alt="Swing" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Arg'inchoq</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFIJy7rZabfQayJb9swB2-gJLJCVw6-QhMWTUB8CB25pMLybZ_yqdC7QVh2K-2j3aRVfY&usqp=CAU" alt="Daybed" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Tapchan</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtiKjoyzoFILsNiTpZ-d7HylXDH7WalSiC7w&s" alt="Planter" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Musur idish</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="https://hozotdel.ru/wa-data/public/shop/products/75/51/5175/images/9840/9840.650@2x.jpg" alt="Simple Bench" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Oddiy skameyka</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="https://files.glotr.uz/company/000/007/849/products/2019/04/03/15542767649709-1c4afbc9e2537b411f206995b521ada5.jpg?_=ozb9y" alt="Patterned Bench" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Naqishli skameyka</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="https://files.glotr.uz/company/000/007/849/products/2023/09/18/2023-09-18-15-38-40-609027-928d2d625ecbd25a4958b3b7b3109994.webp?_=ozbol" alt="Visetka" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Visetka</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="https://files.glotr.uz/company/000/007/849/products/2023/02/20/2023-02-20-17-30-19-526331-1dff738992c6ca52a1731f658537f161.webp?_=ozauc" alt="Panjara" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Panjara</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkE-OeZ-7vtNULpKL7zZZ9Y6S-DDxRyn1dvA&s" alt="Triangle Bench" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Uchburchak shakilli skameyka</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQnt9W-5zggNwP4O2nD5QqpUH1tzL6b-qpqA&s" alt="Light Posts" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Chiroq ustunlari</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Additional products from local images -->
+                <div class="product-card fade-in">
+                    <img src="five.jpg" alt="Trash Bin" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Ustun</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="six.jpg" alt="Seat with Trash Bin" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">So'ri</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="photo_2020-08-31_19-12-29.jpg" alt="Seats" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Bog' o'rindig'i va chiqindi idish</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="eight.jpg" alt="Garden Seat" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Bog' o'rindig'i</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="nine.jpg" alt="Post" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Bog' o'rindig'i</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="ten.jpg" alt="Fence" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Bog' o'rindig'i</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="ten1.jpg" alt="Garden Seat 2" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Bog' o'rindig'i</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="ten2.jpg" alt="Garden Seat 3" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Bog' o'rindig'i</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="ten3.jpg" alt="Garden Seat 4" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Bog' o'rindig'i</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="ten4.jpg" alt="Garden Seat 5" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Bog' o'rindig'i</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="ten5.jpg" alt="Garden Seat 6" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Bog' o'rindig'i</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="ten6.jpg " alt="Garden Seat 7" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Bog' o'rindig'i</h3>
+                        <p class="product-price">Narxi telefonda kelishiladi</p>
+                        <button class="order-btn">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title fade-in">See Our Work in Action</h2>
+            <div class="video-grid">
+                <div class="video-container fade-in">
+                    <iframe src="https://www.youtube.com/embed/BFfPrp9P6-M" title="Degriz Showcase Video 1" allowfullscreen></iframe>
+                </div>
+                <div class="video-container fade-in">
+                    <iframe src="https://www.youtube.com/embed/YmoKyEyFH50" title="Degriz Showcase Video 2" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="qr-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Connect With Us</h2>
+            <div class="qr-grid">
+                <div class="qr-card fade-in">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://t.me/degrizuz" alt="Telegram QR">
+                    <h3>Telegram</h3>
+                    <p>Qr codi</p>
+                </div>
+                <div class="qr-card fade-in">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/degriz.uz" alt="Instagram QR">
+                    <h3>Instagram</h3>
+                    <p>Qr codi</p>
+                </div>
+                <div class="qr-card fade-in">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://youtube.com/@degrizkanali" alt="YouTube QR">
+                    <h3>YouTube</h3>
+                    <p>Qr codi</p>
+                </div>
+                <div class="qr-card fade-in">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.facebook.com/share/1LBJMj2EYb/" alt="Facebook QR">
+                    <h3>Facebook</h3>
+                    <p>Qr codi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+998 90 908 8449</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+998 90 318 6580</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+998 90 949 4404</span>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                <span>Premium Quality Since 2001</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Order button functionality
+        document.querySelectorAll('.order-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                window.open('https://t.me/degrizuz', '_blank');
+            });
+        });
+
+        // CTA button functionality
+        document.querySelector('.cta-button').addEventListener('click', () => {
+            document.querySelector('.products').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
