@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degriz - Sifatli va hamyonbop mebellar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="b99ed160-73e4-4fe9-a2d8-e56a8ee27b8a_removalai_preview.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #FC004A;
+            --secondary-color: #2c3e50;
+            --accent-color: #f8f9fa;
+            --text-color: #333;
+            --border-color: #e5e5e5;
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+            --gradient: linear-gradient(135deg, #FC004A, #ff4757);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* New Header Design */
+        .main-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            height: 70px;
+        }
+
+        .main-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .main-logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .main-logo-text {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 0;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 25px 24px;
+            display: block;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ecf0f1;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .action-btn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+
+        .action-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.1);
+        }
+
+        .action-btn svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hover effects */
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #FC004A, #ff4757);
+            transition: width 0.3s ease;
+        }
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #FC004A;
+            --primary-dark: #cc0038;
+            --secondary-color: #1a365d;
+            --accent-color: #f8fafc;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-light: #718096;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+            --gradient-primary: linear-gradient(135deg, #FC004A 0%, #ff4757 100%);
+            --gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-hero: linear-gradient(135deg, rgba(252,0,74,0.9) 0%, rgba(26,54,93,0.8) 100%);
+            --border-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: #f0f0f0;
+            padding: 2rem 0;
+        }
+
+        /* Statistics Section */
+        .stats-section {
+            background: var(--white);
+            padding: 4rem 0;
+            position: relative;
+            z-index: 10;
+            border-radius: 50px 50px 0 0;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, var(--accent-color), var(--white));
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        /* Social Links Header */
+        .social-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 70px;
+            width: 100%;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .social-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 0;
+        }
+
+        .social-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .social-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 120px; /* Adjusted for two headers */
+            position: relative;
+            height: 70vh;
+            background: linear-gradient(135deg, rgba(252,0,74,0.8), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            border-radius: 0 0 50px 50px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-button {
+            background: white;
+            color: var(--primary-color);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background: var(--accent-color);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: var(--gradient);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .product-price {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .order-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .order-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(252, 0, 74, 0.3);
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .video-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 290px;
+            border: none;
+        }
+
+        /* QR Code Section */
+        .qr-section {
+            padding: 60px 0;
+            background: var(--accent-color);
+        }
+
+        .qr-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .qr-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .qr-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .qr-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+            background: var(--secondary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+                flex-direction: column;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-link {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 15px 24px;
+                text-align: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero {
+                margin-top: 140px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        .phone-selector {
+            position: relative;
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .phone-select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 12px 45px 12px 40px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #2c3e50;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+            min-width: 200px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .phone-select:hover {
+            border-color: #FC004A;
+            box-shadow: 0 4px 20px rgba(252, 0, 74, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .phone-select:focus {
+            border-color: #FC004A;
+            box-shadow: 0 0 0 3px rgba(252, 0, 74, 0.1);
+        }
+
+        .phone-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FC004A;
+            font-size: 16px;
+            pointer-events: none;
+        }
+
+        .dropdown-arrow {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+            font-size: 12px;
+            pointer-events: none;
+            transition: transform 0.3s ease;
+        }
+
+        .phone-select:focus + .dropdown-arrow {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        /* Custom option styling for modern browsers */
+        .phone-select option {
+            padding: 10px;
+            background: white;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .phone-select option:hover {
+            background: #f8f9fa;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .phone-select {
+                min-width: 180px;
+                font-size: 13px;
+                padding: 10px 40px 10px 35px;
+            }
+        }
+        .btn-social {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 5px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.btn-youtube {
+    background: linear-gradient(135deg, #FF0000, #CC0000);
+}
+    </style>
+</head>
+<body >
+    <!-- Main Navigation Header -->
+    <header style="margin-bottom: 0 ;" class="main-header">
+        <nav class="nav-container">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            
+            <div class="main-logo">
+                <img style="height: 70px; width: 70px;" src="b99ed160-73e4-4fe9-a2d8-e56a8ee27b8a_removalai_preview.png" alt="Degriz Logo">
+            </div>
+            
+            <ul style="gap: 10px;" class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a style="margin-top: 10px;" href="#hero" class="nav-link">ASOSIY</a>
+                </li>
+                <li  class="nav-item">
+                    <a style="margin-top: 10px;" href="kirish3.html" class="nav-link">REKLAMA</a>
+                </li>
+                <li class="nav-item">
+                    <a style="margin-top: 10px;" href="kirish4.html" class="nav-link">MA'LUMOT</a>
+                </li>
+                <li class="nav-item">
+                    <a style="margin-top: 10px;" href="kirish5.html" class="nav-link">BOG'LANISH</a>
+                </li>
+                <li class="nav-item">
+                    <a style="margin-top: 10px;" href="kirish6.html" class="nav-link">JOYLASHUVIMIZ</a>
+                </li>
+                <li class="nav-item">
+                    <a  style="margin-top: 10px;" href="kirish7.html" class="nav-link">O'yin</a>
+                </li>
+            </ul>
+    <div style="margin-left: 20px;" class="phone-selector">
+        <i class="fas fa-phone phone-icon"></i>
+        <select name="phone_numbers" id="phoneSelect" class="phone-select">
+            <option value="" disabled selected>Bog'lanish uchun</option>
+            <option value="+998909088449">📞 +998 90 908 8449</option>
+            <option value="+998909494404">📞 +998 90 949 4404</option>
+            <option value="+998903186583">📞 +998 90 318 6583</option>
+            <option value="+998998988449">📞 +998 99 898 8449</option>
+        </select>
+        <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </div>
+        </nav>  
+    </header>
+
+    <section style="margin-top: 2px; background-image: url('image copy.png');" class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Sifatli va hamyonbop bog' mebellari</h1>
+            <p>Bizning o'ta mohirona uslubda qilingan mebellarimizni ko'rishingiz mumkin</p>
+            <button class="cta-button">Mebellarni ko'rish</button>
+        </div>
+    </section>
+<section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item fade-in">
+                <span class="stat-number">2001</span>
+                <span class="stat-label">Tashkil etilgan yil</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Yillik tajriba</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number">10000+</span>
+                <span class="stat-label">Mamnun mijozlar</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Sifat kafolati</span>
+            </div>
+        </div>
+    </section>
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title fade-in">Bizning bog' mebellarimiz</h2>
+            <div class="products-grid">
+                        <div class="product-card fade-in">
+                    <img src="img/orindig.png" alt="Garden Seat 7" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">O'rindig'lar</h3>
+                        <p class="product-price">Premium va Sifatli O'rindiglar</p>
+                        <a href="k1.html" class="btn-social btn-youtube">
+                            Jamg'armani ko'rish
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="img/arginchoq.png" alt="Garden Seat 7" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Arg'inchoqlar</h3>
+                        <p class="product-price">Premium va Sifatli Arg'inchoqlar</p>
+                        <a href="k2.html" class="btn-social btn-youtube">
+                            Jamg'armani ko'rish
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="img/sori.png" alt="Garden Seat 7" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">So'rilar</h3>
+                        <p class="product-price">Premium va Sifatli So'rilar</p>
+                        <a href="k3.html" class="btn-social btn-youtube">
+                            Jamg'armani ko'rish
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <img src="ustun.img/image.png" alt="Garden Seat 7" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Ustunlar</h3>
+                        <p class="product-price">Premium va Sifatli Ustunlar</p>
+                        <a href="k4.html" class="btn-social btn-youtube">
+                            Jamg'armani ko'rish
+                        </a>
+                    </div>
+                </div>
+
+                        <div class="product-card fade-in">
+                    <img src="img/panjara.png" alt="Garden Seat 7" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Panjaralar</h3>
+                        <p class="product-price">Premium va Sifatli Panjaralar</p>
+                        <a href="k5.html" class="btn-social btn-youtube">
+                            Jamg'armani ko'rish
+                        </a>
+                    </div>
+                </div>
+
+                        <div class="product-card fade-in">
+                    <img src="img/shipon.png" alt="Garden Seat 7" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Shiyponlar</h3>
+                        <p class="product-price">Premium va Sifatli Shiyponlar</p>
+                        <a href="k6.html" class="btn-social btn-youtube">
+                            Jamg'armani ko'rish
+                        </a>
+                    </div>
+                </div>
+
+                        <div class="product-card fade-in">
+                    <img src="img/chiroq.png" alt="Garden Seat 7" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Chiroqlar</h3>
+                        <p class="product-price">Premium va Sifatli Chiroqlar</p>
+                       <a href="k7.html" class="btn-social btn-youtube">
+                            Jamg'armani ko'rish
+                        </a>
+                    </div>
+                </div>
+
+
+                        <div class="product-card fade-in">
+                    <img src="img/image copy 2.png" alt="Garden Seat 7" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Velosopedlar toxtash joylari</h3>
+                        <p class="product-price">Premium va Sifatli Velasopedlar toxtash joylari</p>
+                        <a href="k8.html" class="btn-social btn-youtube">
+                            Jamg'armani ko'rish
+                        </a>
+                    </div>
+                </div>
+
+                        <div class="product-card fade-in">
+                    <img src="img/chiqindi.png" alt="Garden Seat 7" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Chiqindi idishlar</h3>
+                        <p class="product-price">Premium va Sifatli Chiqindi idishlar</p>
+                        <a style="text-align: center;"  href="k9.html" class="btn-social btn-youtube">
+                            <i style="text-align: center;" class="fab fa-yotube"></i>
+                           Jamg'armani ko'rish
+                        </a>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </section>
+    <section style="margin-bottom: 0;" class="contact" id="contact">
+        <div class="container">
+            <h2 style="color: white;" class="section-title">Ko'proq informatsiya uchun</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+998 90 908 8449</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+998 90 318 6583</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+998 90 949 4404</span>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="hero-badge">
+                <i class="fas fa-star"></i>
+                <span>Sifatli va hamyonbop mebellar 2001-yildan beri</span>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Action button functions
+        function scrollToProducts() {
+            document.getElementById('products').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        function searchProducts() {
+            // Simple search functionality - you can enhance this
+            const searchTerm = prompt('Qidirish uchun kalit so\'z kiriting:');
+            if (searchTerm) {
+                alert(`"${searchTerm}" uchun qidiruv amalga oshirilmoqda...`);
+                // Here you can implement actual search functionality
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const mainHeader = document.querySelector('.main-header');
+            const socialHeader = document.querySelector('.social-header');
+            
+            if (window.scrollY > 100) {
+                mainHeader.style.background = 'linear-gradient(135deg, #1a252f 0%, #2c3e50 100%)';
+                socialHeader.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                mainHeader.style.background = 'linear-gradient(135deg, #2c3e50 0%, #34495e 100%)';
+                socialHeader.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Order button functionality
+        document.querySelectorAll('.order-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                window.open('https://t.me/degrizuz', '_blank');
+            });
+        });
+
+        // CTA button functionality
+        document.querySelector('.cta-button').addEventListener('click', () => {
+            document.getElementById('products').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

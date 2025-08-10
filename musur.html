@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degriz - Bog' Mebellari</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="b99ed160-73e4-4fe9-a2d8-e56a8ee27b8a_removalai_preview.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+         :root {
+            --primary-color: #FC004A;
+            --primary-dark: #cc0038;
+            --secondary-color: #1a365d;
+            --accent-color: #f8fafc;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-light: #718096;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+            --gradient-primary: linear-gradient(135deg, #FC004A 0%, #ff4757 100%);
+            --gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-hero: linear-gradient(135deg, rgba(252,0,74,0.9) 0%, rgba(26,54,93,0.8) 100%);
+            --border-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: #f0f0f0;
+            margin: 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: var(--secondary-color);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: white;
+            position: relative;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-primary);
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-item i {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item span {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        :root {
+            --primary-color: #FC004A;
+            --primary-dark: #cc0038;
+            --secondary-color: #1a365d;
+            --accent-color: #f8fafc;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-light: #718096;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+            --gradient-primary: linear-gradient(135deg, #FC004A 0%, #ff4757 100%);
+            --gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --border-radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid var(--border-color);
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-color);
+        }
+
+        .product-image-container {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-md);
+        }
+
+        .product-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .product-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: var(--primary-color);
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 1px;
+        }
+
+        .product-price {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .price-icon {
+            font-size: 1rem;
+        }
+
+        .action-button {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .action-button:hover::before {
+            left: 100%;
+        }
+
+        .action-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(252, 0, 74, 0.4);
+        }
+
+        .action-button:active {
+            transform: translateY(-1px);
+        }
+
+        .button-icon {
+            font-size: 1.1rem;
+        }
+
+        /* Floating elements animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .product-info {
+                padding: 1.5rem;
+            }
+            
+            .action-button {
+                padding: 12px 24px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .product-image-container {
+                height: 220px;
+            }
+        }
+
+        /* Loading animation */
+        .loading {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .loading:nth-child(1) { animation-delay: 0.1s; }
+        .loading:nth-child(2) { animation-delay: 0.2s; }
+        .loading:nth-child(3) { animation-delay: 0.3s; }
+        .loading:nth-child(4) { animation-delay: 0.4s; }
+        .loading:nth-child(5) { animation-delay: 0.5s; }
+        .loading:nth-child(6) { animation-delay: 0.6s; }
+        .loading:nth-child(7) { animation-delay: 0.7s; }
+        .loading:nth-child(8) { animation-delay: 0.8s; }
+        .loading:nth-child(9) { animation-delay: 0.9s; }
+        .loading:nth-child(10) { animation-delay: 1.0s; }
+        .loading:nth-child(11) { animation-delay: 1.1s; }
+        .loading:nth-child(12) { animation-delay: 1.2s; }
+        .loading:nth-child(13) { animation-delay: 1.3s; }
+        .loading:nth-child(14) { animation-delay: 1.4s; }
+        .loading:nth-child(15) { animation-delay: 1.5s; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            height: 60px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 0;
+            flex: 1;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 20px 24px;
+            display: block;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ecf0f1;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .action-btn {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+
+        .action-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.1);
+        }
+
+        .action-btn svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 24px;
+                cursor: pointer;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        /* Hover effects */
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            transition: width 0.3s ease;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+        }
+        /* Yaxshilangan mahsulot kartochkalari uchun CSS */
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+    padding: 0 1rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.4s ease;
+    position: relative;
+    height: auto;
+    min-height: 400px;
+}
+
+.product-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+/* Rasm konteynerini yangilash */
+.product-image-container {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* cover o'rniga contain ishlatamiz */
+    object-position: center;
+    transition: all 0.4s ease;
+    padding: 15px; /* Rasm atrofida bo'shliq */
+    background: white;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.1);
+    padding: 10px;
+}
+
+/* Rasm ustiga overlay qo'shish */
+.product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(252,0,74,0.8), rgba(0,0,0,0.6));
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .product-overlay {
+    opacity: 0.9;
+}
+
+.product-overlay i {
+    color: white;
+    font-size: 3rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Mahsulot ma'lumotlari */
+.product-info {
+    padding: 2rem 1.5rem;
+    text-align: center;
+    background: white;
+}
+
+.product-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    line-height: 1.3;
+}
+
+.product-price {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.btn-social {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 8px;
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-youtube {
+    background: linear-gradient(135deg, #FF0000, #CC0000);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-youtube::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn-youtube:hover::before {
+    left: 100%;
+}
+
+.btn-youtube:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 0, 0, 0.4);
+}
+
+/* Responsive dizayn */
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 0.5rem;
+    }
+    
+    .product-card {
+        min-height: 350px;
+    }
+    
+    .product-image-container {
+        height: 220px;
+    }
+    
+    .product-image {
+        padding: 10px;
+    }
+    
+    .product-info {
+        padding: 1.5rem 1rem;
+    }
+    
+    .product-title {
+        font-size: 1.2rem;
+    }
+    
+    .btn-social {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-image-container {
+        height: 200px;
+    }
+    
+    .product-image {
+        padding: 8px;
+    }
+    
+    .product-info {
+        padding: 1.2rem 0.8rem;
+    }
+}
+
+/* Maxsus holatlar uchun */
+.product-card.featured {
+    border: 3px solid var(--primary-color);
+    position: relative;
+}
+
+.product-card.featured::before {
+    content: '⭐ MASHHUR';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    z-index: 10;
+}
+
+/* Loading holatida */
+.product-image.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 2s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+ /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+                flex-direction: column;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-link {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 15px 24px;
+                text-align: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero {
+                margin-top: 140px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav style="padding: 40px;" class="nav-container">
+            <button class="mobile-menu-btn">☰</button>
+            
+            <div class="main-logo">
+                <img style="height: 70px; width: 70px;" src="b99ed160-73e4-4fe9-a2d8-e56a8ee27b8a_removalai_preview.png" alt="Degriz Logo">
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="kirish2.html" class="nav-link">BOSH SAHIFA</a>
+                </li>
+                <li class="nav-item">
+                    <a href="kirish3.html" class="nav-link">BiZNING REKLAMAMIZ</a>
+                </li>
+                <li class="nav-item">
+                    <a href="kirish4.html" class="nav-link">BIZ HAQIMIZDA</a>
+                </li>
+                <li class="nav-item">
+                    <a href="kirish5.html" class="nav-link">BOG'LANISH</a>
+                </li>
+                <li class="nav-item">
+                    <a href="kirish6.html" class="nav-link">JOYLASHUVIMIZ</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Floating background elements -->
+    <div class="floating-element">
+        <i class="fas fa-chair" style="font-size: 3rem; color: var(--primary-color);"></i>
+    </div>
+    <div class="floating-element">
+        <i class="fas fa-couch" style="font-size: 2.5rem; color: var(--secondary-color);"></i>
+    </div>
+    <div class="floating-element">
+        <i class="fas fa-tree" style="font-size: 3.5rem; color: var(--primary-color);"></i>
+    </div>
+
+    <div class="container">
+        <div class="section-header">
+            <h1 class="section-title">Bizning Bog' Mebellarimiz</h1>
+            <p class="section-subtitle">Sifatli va hamyonbop mebellar 2001-yildan beri</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- 1. O'rindig'lar Card -->
+            <div class="product-card loading fade-in">
+                <div class="product-image-container">
+                    <img src="chiqindi/image copy 2.png" alt="O'rindig'lar" class="product-image">
+                    <div class="product-badge">
+                        <i class="fas fa-star"></i>
+                        Premium
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Chiqindi</h3>
+                    <div class="product-price">
+                        <i class="fas fa-phone-alt price-icon"></i>
+                        Narxi telefonda kelishiladi
+                    </div>
+                    <a href="https://t.me/ImomovMirali" class="action-button" onclick="viewCollection('orindiglar')">
+                        <i class="fas fa-eye button-icon"></i>
+                        Buyurtma berish
+                    </a>
+                </div>
+            </div>
+
+            <!-- 2. Arg'inchoqlar Card -->
+            <div class="product-card loading fade-in">
+                <div class="product-image-container">
+                    <img src="chiqindi/image copy 3.png" alt="Arg'inchoqlar" class="product-image">
+                    <div class="product-badge">
+                        <i class="fas fa-leaf"></i>
+                        Premium
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Chiqindi</h3>
+                    <div class="product-price">
+                        <i class="fas fa-phone-alt price-icon"></i>
+                        Narxi telefonda kelishiladi
+                    </div>
+                    <a href="https://t.me/ImomovMirali" class="action-button" onclick="viewCollection('arginchoqlar')">
+                        <i class="fas fa-eye button-icon"></i>
+                        Buyurtma berish
+                    </a>
+                </div>
+            </div>
+
+            <!-- 3. So'rilar Card -->
+            <div class="product-card loading fade-in">
+                <div class="product-image-container">
+                    <img src="chiqindi/image copy 4.png" alt="So'rilar" class="product-image">
+                    <div class="product-badge">
+                        <i class="fas fa-award"></i>
+                        Premium
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Chiqindi</h3>
+                    <div class="product-price">
+                        <i class="fas fa-phone-alt price-icon"></i>
+                        Narxi telefonda kelishiladi
+                    </div>
+                    <a href="https://t.me/ImomovMirali" class="action-button" onclick="viewCollection('sorilar')">
+                        <i class="fas fa-eye button-icon"></i>
+                        Buyurtma berish
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4. Ustunlar Card -->
+            <div class="product-card loading fade-in">
+                <div class="product-image-container">
+                    <img src="chiqindi/image copy 5.png" alt="Ustunlar" class="product-image">
+                    <div class="product-badge">
+                        <i class="fas fa-shield-alt"></i>
+                       Premium
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Chiqindi</h3>
+                    <div class="product-price">
+                        <i class="fas fa-phone-alt price-icon"></i>
+                        Narxi telefonda kelishiladi
+                    </div>
+                    <a href="https://t.me/ImomovMirali" class="action-button" onclick="viewCollection('ustunlar')">
+                        <i class="fas fa-eye button-icon"></i>
+                        Buyurtma berish
+                    </a>
+                </div>
+            </div>
+
+            <!-- 5. Panjaralar Card -->
+            <div class="product-card loading fade-in">
+                <div class="product-image-container">
+                    <img src="chiqindi/image copy.png" alt="Panjaralar" class="product-image">
+                    <div class="product-badge">
+                        <i class="fas fa-lock"></i>
+                        Premium
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Chiqindi</h3>
+                    <div class="product-price">
+                        <i class="fas fa-phone-alt price-icon"></i>
+                        Narxi telefonda kelishiladi
+                    </div>
+                    <a href="#" class="action-button" onclick="viewCollection('panjaralar')">
+                        <i class="fas fa-eye button-icon"></i>
+                        Buyurtma berish
+                    </a>
+                </div>
+            </div>
+
+            <!-- 6. Shiponlar Card -->
+            <div class="product-card loading fade-in">
+                <div class="product-image-container">
+                    <img src="chiqindi/image.png" alt="Shiponlar" class="product-image">
+                    <div class="product-badge">
+                        <i class="fas fa-home"></i>
+                        Premium
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Chiqindi</h3>
+                    <div class="product-price">
+                        <i class="fas fa-phone-alt price-icon"></i>
+                        Narxi telefonda kelishiladi
+                    </div>
+                    <a href="https://t.me/ImomovMirali" class="action-button" onclick="viewCollection('shiponlar')">
+                        <i class="fas fa-eye button-icon"></i>
+                        Buyurtma berish
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<section style="margin-top: 50px;" class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title fade-in">Ko'proq informatsiya uchun</h2>
+                <p style="color: white;" class="section-subtitle fade-in">Bizga qo'ng'iroq qiling yoki xabar yuboring</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item fade-in" onclick="window.open('tel:+998909088449', '_self')">
+                        <i class="fas fa-phone"></i>
+                        <span>+998 90 908 8449</span>
+                    </div>
+                    <div class="contact-item fade-in" onclick="window.open('tel:+998903186583', '_self')">
+                        <i class="fas fa-phone"></i>
+                        <span>+998 90 318 6583</span>
+                    </div>
+                    <div class="contact-item fade-in" onclick="window.open('tel:+998909494404', '_self')">
+                        <i class="fas fa-phone"></i>
+                        <span>+998 90 949 4404</span>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <div class="hero-badge">
+                        <i class="fas fa-star"></i>
+                        <span>Sifatli va hamyonbop mebellar 2001-yildan beri</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Collection view function
+        function viewCollection(category) {
+            // Add loading animation
+            event.target.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Yuklanmoqda...';
+            
+            setTimeout(() => {
+                switch(category) {
+                    case 'orindiglar':
+                        alert('O\'rindig\'lar kolleksiyasi ochilmoqda...');
+                        break;
+                    case 'arginchoqlar':
+                        alert('Arg\'inchoqlar kolleksiyasi ochilmoqda...');
+                        break;
+                    case 'sorilar':
+                        alert('So\'rilar kolleksiyasi ochilmoqda...');
+                        break;
+                    case 'ustunlar':
+                        alert('Ustunlar kolleksiyasi ochilmoqda...');
+                        break;
+                    case 'panjaralar':
+                        alert('Panjaralar kolleksiyasi ochilmoqda...');
+                        break;
+                    case 'shiponlar':
+                        alert('Shiponlar kolleksiyasi ochilmoqda...');
+                        break;
+                    case 'chiroqlar':
+                        alert('Chiroqlar kolleksiyasi ochilmoqda...');
+                        break;
+                    case 'bog_orindiglar':
+                        alert('Bog\' o\'rindig\'lar kolleksiyasi ochilmoqda...');
+                        break;
+                    case 'chiqindi_idishlar':
+                        alert('Chiqindi idishlar kolleksiyasi ochilmoqda...');
+                        break;
+                    case 'stol_stullar':
+                        alert('Stol va stullar kolleksiyasi ochilmoqda...');
+                        break;
+                    case 'temir_darvozalar':
+                        alert('Temir darvozalar kolleksiyasi ochilmoqda...');
+                        break;
+                    case 'balkon_panjaralari':
+                        alert('Balkon panjaralari kolleksiyasi ochilmoqda...');
+                        break;
+                    case 'dekorativ_elementlar':
+                        alert('Dekorativ elementlar kolleksiyasi ochilmoqda...');
+                        break;
+                    case 'temir_zinapoyalar':
+                        alert('Temir zinapoyalar kolleksiyasi ochilmoqda...');
+                        break;
+                    case 'maxsus_buyurtmalar':
+                        alert('Maxsus buyurtmalar kolleksiyasi ochilmoqda...');
+                        break;
+                    default:
+                        alert('Kolleksiya topilmadi!');
+                }
+                
+                // Reset button
+                event.target.innerHTML = '<i class="fas fa-eye"></i> Jamg\'armani ko\'rish';
+            }, 1500);
+        }
+
+        // Add smooth hover effects
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add click ripple effect to buttons
+        document.querySelectorAll('.action-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                let ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                
+                let x = e.clientX - e.target.offsetLeft;
+                let y = e.clientY - e.target.offsetTop;
+                
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelectorAll('.floating-element');
+            
+            parallax.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+         // Mobile menu toggle functionality
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Action button click handlers
+        document.querySelectorAll('.action-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const title = this.getAttribute('title');
+                console.log(`${title} bosildi`);
+                // Bu yerda har bir tugma uchun funksionallik qo'shishingiz mumkin
+            });
+        });
+        
+    </script>
+</body>
+</html>
