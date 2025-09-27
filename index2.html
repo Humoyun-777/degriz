@@ -1189,7 +1189,7 @@
         </select>
         <div class="lang-selector">
         <select style="background-color:  #2c3e50; color: white; margin-left: 15px;" class="lang-select" onchange="goToSite(this.value); this.selectedIndex=0;">
-            <option selected >Language</option>
+            <option selected >Lang</option>
             <option value="index.html">Uz</option>
             <option value="index1.html">Ru</option>
         </select>
@@ -1621,7 +1621,7 @@
         });
          function goToSite(url) {
             if (url) {
-                window.open(url, '_blank');
+                window.location.href = url;
             }
         }
     </script>
